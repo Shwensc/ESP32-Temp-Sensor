@@ -1,0 +1,4 @@
+*.db
+websocket/tmp
+build/
+dist/

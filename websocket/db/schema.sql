@@ -1,0 +1,5 @@
+CREATE TABLE temperatures (
+  id SERIAL PRIMARY KEY,
+  temperature REAL NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
