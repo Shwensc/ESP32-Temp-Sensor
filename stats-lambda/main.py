@@ -8,17 +8,9 @@ from collections import Counter
 # Initialize the FastAPI app
 app = FastAPI()
 
-# Allow CORS for specific origins
-origins = [
-    "http://localhost",  # Adjust this to your frontend's URL
-    "http://localhost:3000",  # If using a local React development server
-    "http://localhost:5173"
-    # Add more origins as necessary
-]
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,  # List of allowed origins
+    allow_origins=["*"],  # List of allowed origins
     allow_credentials=True,
     allow_methods=["*"],  # Allows all HTTP methods
     allow_headers=["*"],  # Allows all headers

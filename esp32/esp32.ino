@@ -31,6 +31,7 @@ WebsocketsClient webSocket;
 HTTPClient http;
 
 void setup() {
+  pinMode(oneWireBus, INPUT_PULLUP);
   // Start the Serial Monitor
   Serial.begin(BAUD_RATE);
   // Start the DS18B20 sensor

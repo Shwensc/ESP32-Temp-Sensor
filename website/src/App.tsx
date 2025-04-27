@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowUp, Calculator, Activity, Flame, Snowflake, Sun } from "lucide-react";
+import { ArrowUp, Calculator, Activity, Flame, Snowflake, Sun, ArrowDown } from "lucide-react";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"; // Shadcn Chart Components
 import { CartesianGrid, Line, LineChart, XAxis, YAxis } from "recharts";
 import { ModeToggle } from "./components/mode-toggle";
@@ -157,7 +157,7 @@ const TemperatureDashboard = () => {
   const getTempIcon = (temp: number) => {
     if (temp > 30) {
       return <Flame size={48} className="mr-4 text-white" />;
-    } else if (temp < 0) {
+    } else if (temp < 20) {
       return <Snowflake size={48} className="mr-4 text-white" />;
     } else {
       return <Sun size={48} className="mr-4 text-white" />;
@@ -167,7 +167,7 @@ const TemperatureDashboard = () => {
   const getCardClasses = (temp: number) => {
     if (temp > 30) {
       return 'bg-gradient-to-r from-red-500 to-orange-500';
-    } else if (temp < 0) {
+    } else if (temp < 20) {
       return 'bg-gradient-to-r from-blue-500 to-cyan-500';
     } else {
       return 'bg-gradient-to-r from-yellow-500 to-orange-400';
@@ -183,7 +183,7 @@ const TemperatureDashboard = () => {
             <div className="text-4xl font-bold">{formatTemp(realtimeTemp)}</div>
           </div>
           <div className="text-center mt-2 text-white/80">
-            {realtimeTemp > 30 ? 'Burning Hot!' : realtimeTemp < 0 ? 'Chilly Cold!' : 'Nice and Warm'}
+            {realtimeTemp > 30 ? 'Burning Hot!' : realtimeTemp < 20 ? 'Chilly Cold!' : 'Nice and Warm'}
           </div>
         </CardContent>
       </Card>
@@ -239,12 +239,12 @@ const TemperatureDashboard = () => {
         <Card className="col-span-2">
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium flex items-center">
-              <ArrowUp className="mr-2 h-4 w-4" />
+              <ArrowDown className="mr-2 h-4 w-4" />
               Lowest
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{formatTemp(stats.highest)}</div>
+            <div className="text-2xl font-bold">{formatTemp(stats.lowest)}</div>
           </CardContent>
         </Card>
         <Card className="col-span-3">

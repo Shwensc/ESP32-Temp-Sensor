@@ -2,3 +2,5 @@
 websocket/tmp
 build/
 dist/
+websocket/db/sqlc
+dummies/sensor/tmp
