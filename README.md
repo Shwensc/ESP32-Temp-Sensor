@@ -12,7 +12,7 @@ Temperature Monitor is a distributed system that collects, processes, and visual
 ## 👥 Contributors
 
 - [Jonathan Gomes](https://github.com/gomesjonathan99)
-- [Shwen Countinho](https://github.com/Shwensc)
+- [Vivian Ludrick](https://github.com/vivalchemy)
 
 
 ### Key Features
